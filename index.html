@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steady298</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .profile-picture {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .headline {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .social-links a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="profile-picture" src="your_profile_picture.jpg" alt="Profile Picture">
+        <div class="name">Steady298</div>
+        <div class="headline">Welcome to my website</div>
+        <div class="social-links">
+            <a href="https://blog.steady298.xyz" target="_blank">²©¿Í</a>
+            <a href="https://github.com/steady298" target="_blank">GitHub</a>
+            <a href="mailto:wmh1016@qq.com" target="_blank">E-mail</a>
+            <!-- Add more social links as needed -->
+        </div>
+    </div>
+    <audio controls autoplay loop>
+        <source src="/yehangxing.m4a" type="audio/m4a">
+        <source src="/yehangxing.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Wait for the DOM to be ready
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the audio element
+            const audio = document.querySelector("audio");
+
+            // Play the audio on page load
+            audio.play();
+
+            // Loop the audio
+            audio.addEventListener("ended", function () {
+                audio.currentTime = 0; // Reset the audio to the beginning
+                audio.play();
+            });
+        });
+    </script>
+</body>
+</html>
