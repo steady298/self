@@ -53,7 +53,19 @@
             background-color: #333;
             color: #fff;
         }
-       
+       audio {
+            display: none; /* Hide the audio element initially */
+        }
+        #music-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -68,8 +80,24 @@
             <!-- Add more social links as needed -->
         </div>
     </div>
-    <audio src="/yehangxing.mp3" autoplay loop>
+    <audio id="bgAudio" src="/yehangxing.m4a" loop>
+        Your browser does not support the audio element.
     </audio>
-    <iframe src = "/yehangxing.mp3" allow = "autoplay" hidden />
+     <div id="music-button">🎵</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bgAudio = document.getElementById("bgAudio");
+            const musicButton = document.getElementById("music-button");
+
+            // Toggle audio playback on button click
+            musicButton.addEventListener("click", function () {
+                if (bgAudio.paused) {
+                    bgAudio.play();
+                } else {
+                    bgAudio.pause();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
