@@ -91,6 +91,18 @@
         document.addEventListener("DOMContentLoaded", function () {
             const bgAudio = document.getElementById("bgAudio");
             const musicButton = document.getElementById("music-button");
+            const playIcon = document.querySelector("#music-button i");
+
+            // Function to toggle play/pause icon
+            function toggleIcon() {
+                if (bgAudio.paused) {
+                    playIcon.classList.remove("fa-pause");
+                    playIcon.classList.add("fa-play");
+                } else {
+                    playIcon.classList.remove("fa-play");
+                    playIcon.classList.add("fa-pause");
+                }
+            }
 
             // Toggle audio playback on button click
             musicButton.addEventListener("click", function () {
@@ -99,6 +111,16 @@
                 } else {
                     bgAudio.pause();
                 }
+                toggleIcon();
+            });
+
+            // Update icon when audio is played/paused using other controls (e.g., autoplay)
+            bgAudio.addEventListener("play", function () {
+                toggleIcon();
+            });
+
+            bgAudio.addEventListener("pause", function () {
+                toggleIcon();
             });
         });
     </script>
