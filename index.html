@@ -87,20 +87,20 @@
      <div id="music-button">
         <i class="fas fa-music"></i> <!-- Font Awesome music icon -->
     </div>
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             const bgAudio = document.getElementById("bgAudio");
             const musicButton = document.getElementById("music-button");
-            const playIcon = document.querySelector("#music-button i");
+            const musicIcon = document.querySelector("#music-button i");
 
             // Function to toggle play/pause icon
             function toggleIcon() {
                 if (bgAudio.paused) {
-                    playIcon.classList.remove("fa-pause");
-                    playIcon.classList.add("fa-play");
+                    musicIcon.classList.remove("fa-pause");
+                    musicIcon.classList.add("fa-music");
                 } else {
-                    playIcon.classList.remove("fa-play");
-                    playIcon.classList.add("fa-pause");
+                    musicIcon.classList.remove("fa-music");
+                    musicIcon.classList.add("fa-pause");
                 }
             }
 
